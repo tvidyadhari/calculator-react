@@ -29,12 +29,11 @@ class Calc extends Component {
 
         if (
             curExp &&
-            !this.isString(this.state.curExp) &&
-            !this.isNumber(curExp[curExp.length - 1]) &&
-            !this.isNumber(keyValue)
+            (this.isString(this.state.curExp) ||
+            !this.isNumber(curExp[curExp.length - 1])) &&
+            !this.isNumber(keyValue) && keyValue !=="C"
         )
             return;
-
         switch (keyValue) {
             // equals
             case "＝": {
@@ -47,7 +46,7 @@ class Calc extends Component {
                         result = "Bad Expression";
                     }
                     return {
-                        curExp: result + "0",
+                        curExp: result + "",
                         prevExp: prevState.curExp + "",
                     };
                 });

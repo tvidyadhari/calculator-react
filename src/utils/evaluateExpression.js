@@ -44,7 +44,6 @@ const infixToPostfix = (expression) => {
     for (let ch of expression) {
         if (isOperator(ch)) {
             if (number) {
-				console.log(postfix, number)
                 postfix.push(number);
                 number = "";
             }
@@ -65,7 +64,6 @@ const infixToPostfix = (expression) => {
         postfix.push(stack.peek());
         stack.pop();
 	}
-	console.log(postfix)
     return postfix;
 };
 
@@ -76,7 +74,6 @@ const postfixEvaluation = (postfix) => {
         if (isOperator(item)) {
             let operand2 = stack.pop();
             let operand1 = stack.pop();
-            console.log(operand1, operand2);
             switch (item) {
                 case "+":
                     stack.push(operand1 + operand2);
@@ -107,7 +104,7 @@ const evaluateExpression = (infixExp) => {
 	let reformattedInfix = [...infixExp]
         .map((ch) => (ch in operators)? operators[ch]:ch)
         .join("");
-    return postfixEvaluation(infixToPostfix(reformattedInfix));
+    return postfixEvaluation(infixToPostfix(reformattedInfix))+"";
 };
 
 export default evaluateExpression;
