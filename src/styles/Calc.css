@@ -1,0 +1,31 @@
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+:root {
+	font-size: 20px;
+	--clr-primary: #505050;
+	--clr-accent: #85ADBF;
+	--clr-font: whitesmoke;
+	cursor: default;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--clr-accent);
+	color: whitesmoke;
+	font-weight: 300;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+.calc {
+	width: 16em;
+	height: 26em;
+	padding: 1em .5em;
+	background: var(--clr-primary);
+	box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+	0.125em 0.125em 0.25em rgba(0,0,0,.15);
+	
+}
